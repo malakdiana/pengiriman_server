@@ -7,6 +7,17 @@ class Pengiriman extends CI_Model {
 		$query = $this->db->get('cabang');
         return $query->result();
 	}
+
+	public function addCabang(){
+			$object = array(
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'kota' => $this->input->post('kota'), 
+			'telepon' => $this->input->post('telepon'));
+			$this->db->insert('cabang', $object);
+
+
+	}
 	public function getjenis(){
 		
         $query = $this->db->get('jenis');
@@ -78,19 +89,38 @@ class Pengiriman extends CI_Model {
 		$object = array(
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
-			'kota' => $this->upload->data('kota'), 
+			'kota' => $this->input->post('kota'), 
 			'telepon' => $this->input->post('telepon'));
         $this->db->where('idCabang', $id);
         $this->db->update('cabang', $object);
 	}
+
+	public function updateAdmin(){
+		$id = $this->input->post('idAdmin');
+		$object = array(
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'));
+        $this->db->where('idAdmin', $id);
+        $this->db->update('admin', $object);
+	}
 	public function updatejenis(){
 		$id = $this->input->post('idJenis');
 		$object = array(
-			'idCabang' => $this->input->post('idCabang'),
+			'idJenis' => $id,
 			'jenis' => $this->input->post('jenis'),
-			'harga' => $this->upload->data('harga'));
+			'harga' => $this->input->post('harga'),
+			'keterangan' => $this->input->post('keterangan'));
         $this->db->where('idJenis', $id);
         $this->db->update('jenis', $object);
+	}
+	public function addjenis(){
+	
+		$object = array(
+		
+			'jenis' => $this->input->post('jenis'),
+			'harga' => $this->input->post('harga'),
+			'keterangan' => $this->input->post('keterangan'));
+  $this->db->insert('jenis', $object);
 	}
 	public function deletejenis($id){
 		$this->db->where('idJenis', $id);
@@ -100,4 +130,10 @@ class Pengiriman extends CI_Model {
 		$this->db->where('idCabang', $id);
         $this->db->delete('cabang');
 	}
+
+	public function chart(){
+        $query = $this->db->query("SELECT cabang.kota , count(pengiriman.noResi) as total from pengiriman RIGHT join cabang on cabang.idCabang = pengiriman.idCabang GROUP by cabang.idCabang");
+        return $query->result();
+
+     }
 }

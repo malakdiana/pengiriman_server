@@ -13,10 +13,12 @@ class Pengiriman extends REST_Controller {
     //Menampilkan data jnecounter
     function index_get() {
         $idCabang = $this->get('idCabang');
+        $noResi = $this->get('noResi');
         if ($idCabang == '') {
             $jnecounter = $this->db->get('pengiriman')->result();
 
-        } else {
+        }
+         else {
             $this->db->select('*');
             $this->db->from('pengiriman');
             $this->db->join('jenis', 'pengiriman.idJenis = jenis.idJenis', 'left');
@@ -55,17 +57,7 @@ class Pengiriman extends REST_Controller {
     function index_put() {
     $noResi = $this->put('noResi');
       $data = array(
-                // 'pengirim' => $this->put('pengirim'),
-                // 'alamatPengirim' => $this->put('alamatPengirim'),
-                // 'teleponPengirim' => $this->put('teleponPengirim'),
-                // 'penerima' => $this->put('penerima'),
-                // 'alamatPenerima' => $this->put('alamatPenerima'),
-                // 'teleponPenerima' => $this->put('teleponPenerima'),
-                // 'Tanggal' => $this->put('Tanggal'),
-                // 'jenisBarang' => $this->put('jenisBarang'),
-                // 'berat' => $this->put('berat'),
-                // 'idCabang' => $this->put('idCabang'),
-                // 'idJenis' => $this->put('idJenis'),
+              
                  'namaPenerima' =>$this->put('namaPenerima'),
                 'status' => $this->put('status'));
         $this->db->where('noResi', $noResi);
@@ -74,8 +66,7 @@ class Pengiriman extends REST_Controller {
             $this->response($data, 200);
         } else {
             $this->response(array('status' => 'fail', 502));
-        }
-    }
+        }}
 
     function index_delete() {
         $noResi = $this->delete('noResi');

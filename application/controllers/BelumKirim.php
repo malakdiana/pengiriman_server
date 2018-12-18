@@ -56,18 +56,6 @@ class BelumKirim extends REST_Controller {
     function index_put() {
     $noResi = $this->put('noResi');
       $data = array(
-                // 'pengirim' => $this->put('pengirim'),
-                // 'alamatPengirim' => $this->put('alamatPengirim'),
-                // 'teleponPengirim' => $this->put('teleponPengirim'),
-                // 'penerima' => $this->put('penerima'),
-                // 'alamatPenerima' => $this->put('alamatPenerima'),
-                // 'teleponPenerima' => $this->put('teleponPenerima'),
-                // 'Tanggal' => $this->put('Tanggal'),
-                // 'jenisBarang' => $this->put('jenisBarang'),
-                // 'berat' => $this->put('berat'),
-                // 'idCabang' => $this->put('idCabang'),
-                // 'idJenis' => $this->put('idJenis'),
-                // 'namaPenerima' =>$this->put('namaPenerima'),
                 'status' => $this->put('status'));
         $this->db->where('noResi', $noResi);
         $update = $this->db->update('pengiriman', $data);

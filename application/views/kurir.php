@@ -33,8 +33,7 @@
                             
                         <div class="card">
                             <div class="card-body">
-                                <a href="" data-toggle="modal" data-target="#myModal">
-                                 <button type="button" class="btn btn-success" style="margin-bottom: 20px" >Tambah</button></a>
+                               
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -45,7 +44,7 @@
                                     <td><b>Jenis Kelamin</b></td>
                                     <td><b>Alamat</b></td>
                                     <td><b>Telepon</b></td>
-                                    <td><b>Aksi</b></td>
+                                  
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,13 +57,7 @@
                                         <td><?php echo $key->jenisKelamin ?></td>
                                         <td><?php echo $key->alamat ?></td>
                                         <td><?php echo $key->telepon ?></td>
-                                        <td>
-                                            <a href="javascript:void(0);" 
-                                            onclick="showmodal('<?php echo $key->idKurir ?>','<?php echo $key->idCabang ?>','<?php echo $key->nama ?>','<?php echo $key->nik ?>','<?php echo $key->jenisKelamin ?>','<?php echo $key->alamat ?>','<?php echo $key->telepon ?>')" 
-                                                data-toggle="modal" 
-                                                data-target="#myModalEdit"><button class="btn btn-secondary">Update</button></a>
-                                            <a href="<?php echo site_url()?>/Server/deleteKurir/<?php echo $key->idKurir; ?>" onclick="return confirm('Are you sure to delete this data permanently?');"><button class="btn btn-warning">Delete</button></a>
-                                        </td>
+                                      
                                     </tr>
                                     <?php } ?>
                             </tbody>

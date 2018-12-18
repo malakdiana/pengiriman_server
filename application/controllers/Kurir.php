@@ -21,13 +21,12 @@ class Kurir extends REST_Controller {
 	}
 
 	// insert new data to mahasiswa
-	function index_post() {
-		
-
+	function index_post() {	
 		$data = array(
 					'idCabang' 		=> $this->post('idCabang'),
 					'nama' 		=> $this->post('nama'),
 					'nik' 		=> $this->post('nik'),
+					'alamat' => $this->post('alamat'),
 					'jenisKelamin'			=> $this->post('jenisKelamin'),
 					'telepon' => $this->post('telepon'));
 			
@@ -47,6 +46,7 @@ class Kurir extends REST_Controller {
 					'idCabang' 		=> $this->put('idCabang'),
 					'nama' 		=> $this->put('nama'),
 					'nik' 		=> $this->put('nik'),
+					'alamat' =>$this->put('alamat'),
 					'jenisKelamin'	=> $this->put('jenisKelamin'),
 					'telepon' => $this->put('telepon'));
 			

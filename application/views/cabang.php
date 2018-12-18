@@ -114,7 +114,7 @@
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                     <h4 class="modal-title">Tambah User</h4>
                 </div>
-                    <?php echo form_open_multipart('TabelAdmin2/addAdmin');?>
+                    <?php echo form_open_multipart('Server/addCabang');?>
                 
                     <div class="modal-body">
                             <div class="form-group">
@@ -130,43 +130,19 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Nama</label>
+                                <label class="col-lg-2 col-sm-2 control-label">Kota</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="nama" placeholder="nama">
+                                    <input type="text" class="form-control" name="kota" placeholder="kota">
                                 </div>
                             </div>
-                             <div class="form-group">
-                                <div class="form-group">
-                                <label for="col-lg-2 col-sm-2 control-label">Foto</label>
-                                <div class="col-lg-10">
-                                <input type="file" class="form-control" name="foto" value="" placeholder="upload foto" >
-
-                            </div>
-                                <label class="col-lg-2 col-sm-2 control-label">Alamat</label>
-                                <div class="col-lg-10">
-                                    <textarea class="form-control" name="alamat" placeholder="alamat"></textarea>
-                                </div>
-                            </div>
+                            
                              <div class="form-group">
                                 <label class="col-lg-2 col-sm-2 control-label">Telepon</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" name="telepon" placeholder="telepon">
                                 </div>
                             </div>
-                             <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Email</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="email" placeholder="email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Saldo</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="saldo" placeholder="0">
-                                </div>
-                            </div>
-                           
-                        </div>
+                            
                         <div class="modal-footer">
                             <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>

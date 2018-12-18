@@ -13,10 +13,12 @@ class Kirim extends REST_Controller {
     //Menampilkan data jnecounter
     function index_get() {
         $idPengiriman = $this->get('idPengiriman');
+      
         if ($idPengiriman == '') {
             $jnecounter = $this->db->get('kirim')->result();
 
-        } else {
+        }
+        else {
             $this->db->where('idPengiriman', $idPengiriman);
             $jnecounter = $this->db->get('kirim')->result();
         }
@@ -43,11 +45,6 @@ class Kirim extends REST_Controller {
     function index_put() {
         $noResi = $this->put('noResi');
      $data=array(
-                //'noResi' => $this->input->put('noResi'),
-                //'asal' => $this->input->put('asal'),
-                //'tujuan' => $this->input->put('tujuan'),
-                //'tanggal' => $this->input->put('tanggal'),
-                //'idKurir' => $this->input->put('idKurir'),
                 'status' => $this->put('status'),
                 );
         $this->db->where('noResi', $noResi);

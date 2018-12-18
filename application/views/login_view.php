@@ -1,73 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | JNE</title>
-
-  <!-- Bootstrap -->
-  <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
-  <style>
-    body {
-      background-color:white;
-    }
-    .row {
-      margin:10px auto;
-      width:300px;
-      text-align:center;
-    }
-    .login {
-      background-color:#  ;
-      padding:20px;
-      margin-top:20px;
-    }
-    .navbar {
-      background-color: crimson; 
-      padding-top: 5px;
-    }
-    .btn {
-      background-color: crimson;
-      border:solid crimson;
-    }
-    .btn:hover {
-      background: black;
-    }
-    }
-  </style>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?=base_url()?>assets/login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/login/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-</div></nav>
-<br><br>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+			
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
 <?php echo form_open('login/cekLogin') ?>
-      <img src="<?php echo base_url(); ?>assets/images/iconuser.png" class="img-responsive center-block" width="100" height="100"></a>
-    <div class = "container">
-    <div class="row">
-      <h1><b><font face = "century gothic" color = "crimson">Log In</font></b></h1>
-      <div class="login">
-        <form role="form" action="" method="post">
-          <div class="form-group">
-            <input type="text" name="username" class="form-control" placeholder="Username" required autofocus />
-          </div>
-          <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Password" required autofocus />
-          </div>
-          <div class="form-group">
-            <input type="submit" name="login" class="btn btn-primary btn-block" value="Log me in" />
-          </div>
-        </form>
-        <?php echo form_open('login/register') ?>
-        <div class="form-group">
-            <a href ="<?=site_url() ?>/Login/register"><input type="submit" name="create_function" class="btn btn-danger btn-block" value="Create Account" /></a>
-          </div>
-          <p>CopyRight@Aflah RM 1641720141</p>
-      </div>
-    </div>
-  </div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="username"></span>
+					</div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Login
+							</button>
+							<?php echo form_close();?>
+						</div>
+					</div>
+
+					
+			
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?=base_url()?>assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?=base_url()?>assets/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url()?>assets/login/js/main.js"></script>
+
 </body>
 </html>

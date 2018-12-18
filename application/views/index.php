@@ -155,9 +155,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                 <div class="row">
                                   
                                     <div class="col-lg-9">
-                                    <?php foreach ($filmPersen as $key) {
-                                    $kursi[] = $key->total1;
-                                    $judul[]=$key->judulFilm;} ?>
+                                    <?php foreach ($chart as $key) {
+                                    $kursi[] = $key->total;
+                                    $judul[]=$key->kota;} ?>
                                     <canvas id="canvas" width="800" height="280"></canvas>
 
     <!--Load chart js-->

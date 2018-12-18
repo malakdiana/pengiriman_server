@@ -104,74 +104,7 @@
     </div>
 
 
-    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 class="modal-title">Tambah User</h4>
-                </div>
-                    <?php echo form_open_multipart('TabelAdmin2/addAdmin');?>
-                
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Username</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="username" placeholder="username">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Password</label>
-                                <div class="col-lg-10">
-                                    <input type="password" class="form-control" name="password" placeholder="password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Nama</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="nama" placeholder="nama">
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <div class="form-group">
-                                <label for="col-lg-2 col-sm-2 control-label">Foto</label>
-                                <div class="col-lg-10">
-                                <input type="file" class="form-control" name="foto" value="" placeholder="upload foto" >
-
-                            </div>
-                                <label class="col-lg-2 col-sm-2 control-label">Alamat</label>
-                                <div class="col-lg-10">
-                                    <textarea class="form-control" name="alamat" placeholder="alamat"></textarea>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Telepon</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" name="telepon" placeholder="telepon">
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Email</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="email" placeholder="email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Saldo</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" name="saldo" placeholder="0">
-                                </div>
-                            </div>
-                           
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
-                            <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
-                        </div>
-                     <?php echo form_close(); ?>
-                </div>
-            </div>
-        </div></div>
+    
 
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModalEdit" class="modal fade-in">
         <div class="modal-dialog">
@@ -179,39 +112,51 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Data</h4>
                 </div>
-     <?php echo form_open_multipart('TabelAdmin/updateAdmin'); ?>
+     <?php echo form_open_multipart('Server/updateJenis'); ?>
                 <div class="form-group">
-                <input type="text" name="idUserAdmin" id="idUserAdmin" hidden="">
-                <input type="text" name="password2"  id="password2" hidden="">
-                <label for="">Username</label>
-                <input type="text" class="form-control" id="username" name="username" value="" placeholder="username" >
+                <input type="text" name="idJenis" id="idJenis" hidden="">
+                <label for="">Jenis Pengiriman</label>
+                <input type="text" class="form-control" id="jenis" name="jenis" value="" placeholder="username" >
                 </div>
 
                 <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" class="form-control" name="password" id="password" value="" placeholder="password" >
+                <label for="">Harga</label>
+                <input class="form-control" name="harga" id="harga" value="" placeholder="" >
                 </div>
                 <div class="form-group">
-                <label for="">Nama</label>
-                <input type="text" class="form-control" name="nama" id="nama" value="" placeholder="password" >
+                <label for="">Keterangan</label>
+                <input type="text" class="form-control" name="keterangan" id="keterangan" value=""  >
+                </div>
+                
+                <center><button type="submit" class="btn btn-primary">Submit</button></center>
+                <?php echo form_close(); ?>
+    </div>
+    </div>
+    </div>
+</div>
+
+  <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade-in">
+        <div class="modal-dialog">
+            <div class="modal-content" style="padding: 20px">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Data</h4>
+                </div>
+     <?php echo form_open_multipart('Server/addJenis'); ?>
+                <div class="form-group">
+                <input type="text" name="idJenis" id="idJenis" hidden="">
+                <label for="">Jenis Pengiriman</label>
+                <input type="text" class="form-control" id="jenis" name="jenis" value="" >
+                </div>
+
+                <div class="form-group">
+                <label for="">Harga</label>
+                <input class="form-control" name="harga" id="harga" value="" placeholder="" >
                 </div>
                 <div class="form-group">
-                <label for="">Alamat</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" value="" >
+                <label for="">Keterangan</label>
+                <input type="text" class="form-control" name="keterangan" id="keterangan" value=""  >
                 </div>
-                <div class="form-group">
-                <label for="">Telepon</label>
-                <input type="text" class="form-control" name="telepon" id="telepon" value="" >
-                </div>
-                <div class="form-group">
-                <label for="">Email</label>
-                <input type="text" class="form-control" name="email" id="email" value="">
-                </div>
-              
-                <div class="form-group">
-                <label for="col-lg-2 col-sm-2 control-label">Saldo</label>
-                <input type="text" class="form-control" name="saldo" id="saldo" value="" placeholder="" >
-                </div>
+                
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>
                 <?php echo form_close(); ?>
     </div>
@@ -228,16 +173,11 @@
      <script src="<?php echo base_url()?>/assets/admin/libs/jquery/dist/jquery.min.js"></script>
 
   <script type="text/javascript">
-    function showmodal(id,username,password,nama,alamat,telepon,email,saldo){
-        document.getElementById('idUserAdmin').value = id;
-        document.getElementById('username').value=username;
-        document.getElementById('nama').value=nama;
-        document.getElementById('password').value=password;
-        document.getElementById('password2').value=password;
-        document.getElementById('email').value=email;      
-        document.getElementById('alamat').value=alamat;
-        document.getElementById('telepon').value=telepon;
-         document.getElementById('saldo').value=saldo;
+    function showmodal(id,jenis,harga,keterangan){
+        document.getElementById('idJenis').value = id;
+        document.getElementById('jenis').value=jenis;
+        document.getElementById('harga').value=harga;
+        document.getElementById('keterangan').value=keterangan;
 
         
     }

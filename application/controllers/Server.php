@@ -10,6 +10,7 @@ class Server extends CI_Controller {
 		$data['admin'] = $this->Pengiriman->totalAdmin();
 		$data['cabang'] = $this->Pengiriman->totalCabang();
 		$data['kurir'] = $this->Pengiriman->totalKurir();
+		$data['chart'] = $this->Pengiriman->chart();
 		$data['tpengiriman'] = $this->Pengiriman->totalPengiriman();
 		$this->load->view('header');
 		$this->load->view('index',$data);
@@ -37,6 +38,11 @@ class Server extends CI_Controller {
 			$this->load->view('admin', $data);
 
 		}
+		function updateAdmin(){
+			$this->load->model('Pengiriman');
+			$this->Pengiriman->updateAdmin();
+			redirect('Server/getAdmin','refresh');
+		}
 		public function getPengiriman($idcabang){
 			$this->load->model('Pengiriman');
 			$data['pengiriman'] = $this->Pengiriman->getpengiriman($idcabang);
@@ -50,6 +56,13 @@ class Server extends CI_Controller {
 			$this->load->view('kurir', $data);
 		}
 
+		public function addCabang(){
+				$this->load->model('Pengiriman');
+			$this->Pengiriman->addcabang();
+			redirect('Server/getCabang','refresh');
+
+		}
+
 		public function updateCabang(){
 			$this->load->model('Pengiriman');
 			$this->Pengiriman->updatecabang();
@@ -59,6 +72,11 @@ class Server extends CI_Controller {
 		public function updateJenis(){
 			$this->load->model('Pengiriman');
 			$this->Pengiriman->updatejenis();
+			redirect('Server/getJenis','refresh');
+		}
+		public function addJenis(){
+			$this->load->model('Pengiriman');
+			$this->Pengiriman->addjenis();
 			redirect('Server/getJenis','refresh');
 		}
 
